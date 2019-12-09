@@ -14,9 +14,7 @@ First thing you need to do is create a store that holds the app state and the lo
 import { Store } from 'regista';
 
 export default class AppStore extends Store {
-    state = {
-        name: '',
-    };
+    state = {};
 }
 ```
 Next we need to register our store
