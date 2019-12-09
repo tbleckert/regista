@@ -1,0 +1,10 @@
+{
+  "name": "regista",
+  "version": "0.0.1",
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^6.1.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.19.1"
+  }
+}

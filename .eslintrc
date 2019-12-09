@@ -1,0 +1,12 @@
+{
+  "extends": "airbnb-base",
+  "env": {
+    "browser": true
+  },
+  "rules": {
+    "indent": ["error", 4, { "SwitchCase": 1 }],
+    "import/extensions": ["error", "always", { "ignorePackages": true } ],
+    "no-param-reassign": [2, { "props": false }],
+    "class-methods-use-this": 0
+  }
+}

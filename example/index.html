@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+    <head>
+        <title>POC</title>
+    </head>
+    <body data-store="App">
+        <button class="c-button" data-action="increment">Click me</button>
+        <p>You have clicked: <x-value data-key="clicks">0</x-value> times</p>
+
+        <div style="margin-top: 40px">
+            <label>Your name:</label>
+            <input type="text" data-key="name">
+            <p>Hello, <x-value data-key="name">world</x-value></p>
+        </div>
+
+        <div style="margin-top: 40px">
+            <h2>Quotes</h2>
+            <p><button class="c-button" data-action="addQuote">Add quote</button></p>
+            <x-items data-key="quotes">
+                <x-item>
+                    <blockquote>
+                        <p><x-value data-key=".">Talk is cheap. Show me the code.</x-value></p>
+                    </blockquote>
+                </x-item>
+                <x-item>
+                    <blockquote>
+                        <p><x-value data-key=".">I'm not a great programmer; I'm just a good programmer with great habits.</x-value></p>
+                    </blockquote>
+                </x-item>
+            </x-items>
+        </div>
+        <script src="./scripts.js" type="module"></script>
+    </body>
+</html>
