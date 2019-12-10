@@ -1,4 +1,4 @@
-import register from '../src/index.js';
+import { register } from '../src/index.js';
 import Store from './Store.js';
 
 const AppStore = new Store({});

@@ -1,4 +1,4 @@
-import RegistaStore from '../src/Store.js';
+import { Store as RegistaStore } from '../src/index.js';
 
 export default class Store extends RegistaStore {
     constructor() {
