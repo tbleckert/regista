@@ -32,5 +32,5 @@ Finally, let's add some HTML
 ```html
 <label>Your name:</label>
 <input type="text" data-key="name">
-<p>Hello, <x-value data-key="name">world</x-value></p>
+<p>Hello, <span data-key="name">world</span></p>
 ```
