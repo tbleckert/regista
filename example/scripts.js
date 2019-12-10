@@ -3,6 +3,8 @@ import Store from './Store.js';
 
 const AppStore = new Store({});
 
+window.store = AppStore;
+
 register(AppStore, (element, componentName, store) => {
     import(`./components/${componentName}.js`).then(({ default: Component }) => {
         new Component(element, store);

@@ -1,6 +1,7 @@
 {
   "name": "regista",
   "version": "0.0.1",
+  "main": "src/index.js",
   "dependencies": {},
   "devDependencies": {
     "eslint": "^6.1.0",

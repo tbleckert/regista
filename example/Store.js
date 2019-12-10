@@ -1,29 +1,27 @@
-import UIStore from '../src/Store.js';
+import RegistaStore from '../src/Store.js';
 
-const quotes = [
-    'I\'m not a great programmer; I\'m just a good programmer with great habits.',
-    'How you look at it is pretty much how you\'ll see it',
-    'You\'ve baked a really lovely cake, but then you\'ve used dog shit for frosting.',
-    'A conscious human is driven by their conscience, not popular opinion.',
-];
-
-export default class Store extends UIStore {
+export default class Store extends RegistaStore {
     constructor() {
         super();
 
         this.state = {};
     }
 
-    onIncrement(state) {
-        return { clicks: parseInt(state.clicks, 10) + 1 };
+    onTodosChanged(state, { value }) {
+        const completedTodos = value.filter(todo => todo.completed).length;
+
+        return { todos: value, totalTodos: value.length, completedTodos };
     }
 
-    onAddQuote(state) {
-        const quote = quotes[Math.floor(Math.random() * quotes.length)];
-        const stateQuotes = (state.quotes || []).slice();
+    onAddTodo(state) {
+        if (!state.addingTodo.length) {
+            return;
+        }
 
-        stateQuotes.push(quote);
+        const todos = state.todos.slice();
 
-        return { quotes: stateQuotes };
+        todos.unshift({ completed: false, name: state.addingTodo });
+
+        this.dispatch({ type: 'todosChanged', value: todos });
     }
 }

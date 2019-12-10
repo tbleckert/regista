@@ -2,32 +2,27 @@
 <html>
     <head>
         <title>POC</title>
+        <style>
+            .items__item input:checked + label {
+                text-decoration: line-through;
+            }
+        </style>
     </head>
     <body data-store="App">
-        <button class="c-button" data-action="increment">Click me</button>
-        <p>You have clicked: <x-value data-key="clicks">0</x-value> times</p>
-
-        <div style="margin-top: 40px">
-            <label>Your name:</label>
-            <input type="text" data-key="name">
-            <p>Hello, <x-value data-key="name">world</x-value></p>
+        <p>You have completed <span data-key="completedTodos">1</span> out of <span data-key="totalTodos">2</span> todos</p>
+        <div class="add">
+            <input type="text" data-key="addingTodo" placeholder="Buy milk">
+            <button type="button" data-action="addTodo">Add todo</button>
         </div>
-
-        <div style="margin-top: 40px">
-            <h2>Quotes</h2>
-            <p><button class="c-button" data-action="addQuote">Add quote</button></p>
-            <x-items data-key="quotes">
-                <x-item>
-                    <blockquote>
-                        <p><x-value data-key=".">Talk is cheap. Show me the code.</x-value></p>
-                    </blockquote>
-                </x-item>
-                <x-item>
-                    <blockquote>
-                        <p><x-value data-key=".">I'm not a great programmer; I'm just a good programmer with great habits.</x-value></p>
-                    </blockquote>
-                </x-item>
-            </x-items>
+        <div class="items" data-items="todos">
+            <div class="items__item">
+                <input type="checkbox" value="1" checked data-key=".completed">
+                <label data-key=".name">Buy milk</label>
+            </div>
+            <div class="items__item">
+                <input type="checkbox" value="1" data-key=".completed">
+                <label data-key=".name">Write letter to Stan</label>
+            </div>
         </div>
         <script src="./scripts.js" type="module"></script>
     </body>
